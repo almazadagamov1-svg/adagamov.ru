@@ -1,27 +1,35 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0b2036">
-    <meta name="description" content="Карта ГВР — пространство для отображения сведений Государственного водного реестра.">
-    <title>Карта ГВР — Алмаз Адагамов</title>
-    <link rel="stylesheet" href="/assets/site.css">
-  </head>
-  <body>
-    <header class="header shell">
-      <a class="brand" href="/" aria-label="Алмаз Адагамов — главная">Адагамов<span class="brand-dot">.</span></a>
-      <a class="back" href="/">← Все инструменты</a>
-    </header>
-    <main class="shell main page-main">
-      <div class="eyebrow">Инструмент / 01</div>
-      <h1>Карта ГВР</h1>
-      <p class="intro">Адрес страницы готов. Сведения Государственного водного реестра пока не загружены — карта появится здесь после проверки и подготовки данных.</p>
-      <div class="empty-state" role="status">
-        <span class="empty-mark" aria-hidden="true">ГВР</span>
-        <div><strong>Данные ещё не опубликованы</strong><p>Здесь не показаны договоры, решения и границы участков акватории.</p></div>
-      </div>
-    </main>
-    <footer class="footer shell"><span>Алмаз Адагамов</span><span>adagamov.ru</span></footer>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2036">
+  <meta name="description" content="Интерактивная карта ГВР и торгов: поиск, фильтры и сведения о водных объектах. Даты снимков указаны внутри карты.">
+  <title>Карта ГВР — Алмаз Адагамов</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;height:100%;font-family:Arial,Helvetica,sans-serif;color:#0b2036}
+    body{display:flex;flex-direction:column;min-height:100dvh}
+    a{color:inherit}
+    .bar{height:56px;flex:none;display:flex;align-items:center;gap:20px;padding:0 clamp(16px,3vw,40px);border-bottom:1px solid #cfd8df;background:#f5f7f9}
+    .brand{font-size:21px;font-weight:800;letter-spacing:-.055em;text-decoration:none}
+    .brand span{color:#1d74b7}
+    .title{font-size:14px;font-weight:600;margin-right:auto}
+    .open{font-size:13px;text-decoration:none;color:#235e8c;white-space:nowrap}
+    .open:hover,.open:focus-visible{text-decoration:underline}
+    main{flex:1;min-height:0}
+    iframe{display:block;width:100%;height:100%;border:0;background:#edf2f5}
+    @media(max-width:520px){.bar{gap:12px;height:52px}.brand{font-size:18px}.title{font-size:13px}.open{font-size:12px}}
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/" aria-label="На главную adagamov.ru">Адагамов<span>.</span></a>
+    <span class="title">Карта ГВР</span>
+    <a class="open" href="https://water-area-check.almazadagamov1.chatgpt.site/" target="_blank" rel="noopener noreferrer">Открыть отдельно ↗</a>
+  </header>
+  <main>
+    <iframe src="https://water-area-check.almazadagamov1.chatgpt.site/" title="Интерактивная карта ГВР и торгов" loading="eager" allow="fullscreen"></iframe>
+  </main>
+</body>
 </html>
