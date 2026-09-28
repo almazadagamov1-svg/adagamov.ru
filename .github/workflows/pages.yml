@@ -1,0 +1,53 @@
+name: Publish adagamov.ru
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/pages-release.part-*'
+      - 'release/pages-release.sha256'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: adagamov-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and unpack release
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat release/pages-release.part-* > /tmp/pages-release.tar.gz
+          printf '%s  %s\n' "$(cat release/pages-release.sha256)" /tmp/pages-release.tar.gz | sha256sum -c -
+          mkdir -p _site
+          tar -xzf /tmp/pages-release.tar.gz -C _site --no-same-owner
+          test -s _site/index.html
+          test -s _site/karta-gvr/index.html
+          test -s _site/data/gvr/map/manifest.json
+          test -s _site/data/torgi/map/manifest.json
+          test ! -e _site/data/torgi/source
+          test ! -e _site/data/torgi/evidence
+          test ! -e _site/data/torgi/card-evidence
+          test ! -e _site/data/torgi/regions
+          ! rg -l 'chatgpt.site|signin-with-chatgpt' _site --glob '*.html' --glob '*.js'
+          printf '%s\n' adagamov.ru > _site/CNAME
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
