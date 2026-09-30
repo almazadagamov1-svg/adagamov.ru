@@ -1,9 +1,17 @@
 {
-  "releaseId": "cdf0547c5840ee9d",
-  "sourceCommit": "877f99b40ce5d5929f38cc32755e74802733320f",
+  "releaseId": "808623695f518742",
+  "sourceCommit": "5bb13d7fe4ee3c76bcd2b898561065bb1b72018c",
   "gvrSourceDate": "2026-09-24",
   "gvrSourceRecords": 50203,
   "gvrRecords": 50202,
-  "torgiSnapshotDate": "2026-09-14",
-  "torgiUpdateStatus": "official_api_timeout"
+  "torgiSnapshotDate": "2026-09-30",
+  "torgiUpdateStatus": "supplied_official_workbooks",
+  "torgiRecords": 236,
+  "torgiApplicationsSubmission": 167,
+  "torgiDeterminingWinner": 69,
+  "torgiCompletenessVerifiedWithApi": false,
+  "torgiWorkbookSha256": [
+    "7519082182ec08bf83227dd31af36d4cbc6cfc7c806e877d888cdb43481370db",
+    "93974d197e35e3a8435154f11bf04b01c426256a7f1dd6d9b5e86f8291a960ac"
+  ]
 }
