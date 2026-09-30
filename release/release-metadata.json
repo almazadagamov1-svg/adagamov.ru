@@ -1,0 +1,9 @@
+{
+  "releaseId": "cdf0547c5840ee9d",
+  "sourceCommit": "877f99b40ce5d5929f38cc32755e74802733320f",
+  "gvrSourceDate": "2026-09-24",
+  "gvrSourceRecords": 50203,
+  "gvrRecords": 50202,
+  "torgiSnapshotDate": "2026-09-14",
+  "torgiUpdateStatus": "official_api_timeout"
+}
