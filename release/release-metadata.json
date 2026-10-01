@@ -1,11 +1,11 @@
 {
-  "releaseId": "bdcac93a3dd0c331",
-  "sourceCommit": "a5c06d8337d87eca6d648ae7bd0089a51de5293d",
+  "releaseId": "f10fe3d7dc4aa7ca",
+  "sourceCommit": "b8bab8331251acd2744258d3da9405f8f7eb6f01",
   "gvrSourceDate": "2026-09-24",
   "gvrSourceRecords": 50203,
   "gvrRecords": 50202,
   "torgiSnapshotDate": "2026-10-01",
-  "torgiUpdateStatus": "verified_saved_official_cards_and_documents",
+  "torgiUpdateStatus": "verified_archived_geometry_and_visual_source_audit",
   "torgiRecords": 228,
   "torgiApplicationsSubmission": 162,
   "torgiDeterminingWinner": 66,
@@ -18,8 +18,12 @@
   "torgiUniqueDocumentsProcessed": 608,
   "torgiFailedLotsExcluded": 8,
   "torgiGeometry": {
-    "PASS": 22,
-    "REVIEW": 103,
-    "UNRESOLVED": 103
-  }
+    "PASS": 137,
+    "REVIEW": 65,
+    "UNRESOLVED": 26
+  },
+  "torgiVisualDocumentsReviewed": 106,
+  "torgiPreviousPassGeometriesPreserved": 22,
+  "archiveSha256": "c5c4a5f8419e8447356ad7abd3e2a276bf845a06bc28c29b79901609734054eb",
+  "archiveBytes": 28946552
 }
