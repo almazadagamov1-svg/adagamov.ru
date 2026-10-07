@@ -1,29 +1,20 @@
 {
-  "releaseId": "f10fe3d7dc4aa7ca",
-  "sourceCommit": "b8bab8331251acd2744258d3da9405f8f7eb6f01",
-  "gvrSourceDate": "2026-09-24",
-  "gvrSourceRecords": 50203,
-  "gvrRecords": 50202,
-  "torgiSnapshotDate": "2026-10-01",
-  "torgiUpdateStatus": "verified_archived_geometry_and_visual_source_audit",
-  "torgiRecords": 228,
-  "torgiApplicationsSubmission": 162,
-  "torgiDeterminingWinner": 66,
-  "torgiCompletenessVerifiedWithApi": false,
-  "torgiWorkbookSha256": [
-    "7519082182ec08bf83227dd31af36d4cbc6cfc7c806e877d888cdb43481370db",
-    "93974d197e35e3a8435154f11bf04b01c426256a7f1dd6d9b5e86f8291a960ac"
-  ],
-  "torgiSelectedLotsProcessed": 236,
-  "torgiUniqueDocumentsProcessed": 608,
-  "torgiFailedLotsExcluded": 8,
-  "torgiGeometry": {
-    "PASS": 137,
-    "REVIEW": 65,
-    "UNRESOLVED": 26
+  "schema": 1,
+  "releaseId": "0f81ca245d7d9812",
+  "sourceCommit": "a2e9331268c93a56aa69e7fa8337ce152bae541a",
+  "sourceRepository": "almazadagamov1-svg/water-area-check",
+  "sourceCiRunId": 37669791248,
+  "sourceCiConclusion": "success",
+  "archiveSha256": "e02e46e3a1ba981fc114f72add7fa33898ec86917ca7a8fa43787f4c189b2ada",
+  "archiveBytes": 28592517,
+  "parts": 14,
+  "torgiCounts": {
+    "total": 228,
+    "pass": 171,
+    "review": 50,
+    "unresolved": 7
   },
-  "torgiVisualDocumentsReviewed": 106,
-  "torgiPreviousPassGeometriesPreserved": 22,
-  "archiveSha256": "c5c4a5f8419e8447356ad7abd3e2a276bf845a06bc28c29b79901609734054eb",
-  "archiveBytes": 28946552
+  "sourceStatusDate": "2026-10-01",
+  "geometryAuditDate": "2026-10-07",
+  "gvrSourceSha256": "91a162b71ba41a0af186f631e8fcb7629bcd84b028b9cf07ed57c11142601ebd"
 }
