@@ -1,20 +1,31 @@
 {
   "schema": 1,
-  "releaseId": "0f81ca245d7d9812",
-  "sourceCommit": "a2e9331268c93a56aa69e7fa8337ce152bae541a",
+  "releaseId": "0a68a79d40036e47",
+  "sourceCommit": "fbd141857dd4e3752c420b22d27a55b7098a58fd",
   "sourceRepository": "almazadagamov1-svg/water-area-check",
-  "sourceCiRunId": 37669791248,
+  "sourceCiRunId": 37934278760,
   "sourceCiConclusion": "success",
-  "archiveSha256": "e02e46e3a1ba981fc114f72add7fa33898ec86917ca7a8fa43787f4c189b2ada",
-  "archiveBytes": 28592517,
-  "parts": 14,
+  "archiveSha256": "8b06b4ed14d85ad12dad30e269272a2269c098c974d49c8b9c19e1868051f41e",
+  "archiveBytes": 29297069,
+  "parts": 56,
   "torgiCounts": {
+    "snapshotDate": "2026-10-01",
     "total": 228,
     "pass": 171,
     "review": 50,
     "unresolved": 7
   },
-  "sourceStatusDate": "2026-10-01",
-  "geometryAuditDate": "2026-10-07",
-  "gvrSourceSha256": "91a162b71ba41a0af186f631e8fcb7629bcd84b028b9cf07ed57c11142601ebd"
+  "gvrSourceSha256": "9d3299f0bdda07350ab4a345b5a54480d5ee23621c397b0b3412be255f7374a8",
+  "gvrSourceDate": "2026-10-08",
+  "gvrCounts": {
+    "sourceRecords": 50955,
+    "records": 50954,
+    "duplicatesSuppressed": 1,
+    "pass": 48259,
+    "hints": 2695,
+    "regions": 89,
+    "sourceTiles": 1801
+  },
+  "coordinateRecoveryDate": "2026-10-09",
+  "restoredCoordinates": 424
 }

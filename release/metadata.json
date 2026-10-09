@@ -1,20 +1,18 @@
 {
-  "releaseId": "6cba2656584f86c2",
+  "releaseId": "0a68a79d40036e47",
   "sourceRepository": "almazadagamov1-svg/water-area-check",
-  "sourceCommit": "6ac138804354c903da7075af913917c955c4d85c",
-  "buildCommit": "45aa488cb25f9c0ce054a54fe25dcf0d4a271434",
-  "archiveSha256": "9baab450765c9bdd31838e217940dfc4c70638f297e3e5a1a59f58da1144151f",
-  "archiveBytes": 30287333,
+  "sourceCommit": "fbd141857dd4e3752c420b22d27a55b7098a58fd",
+  "buildCommit": "224bc95f85a59ddfff38d74043d93151c68c8034",
+  "archiveSha256": "8b06b4ed14d85ad12dad30e269272a2269c098c974d49c8b9c19e1868051f41e",
+  "archiveBytes": 29297069,
   "gvr": {
-    "sourceDate": "2026-10-08",
-    "sourceSha256": "9d3299f0bdda07350ab4a345b5a54480d5ee23621c397b0b3412be255f7374a8",
     "sourceRecords": 50955,
     "records": 50954,
     "duplicatesSuppressed": 1,
-    "pass": 47835,
-    "hints": 3119,
+    "pass": 48259,
+    "hints": 2695,
     "regions": 89,
-    "sourceTiles": 1796
+    "sourceTiles": 1801
   },
   "torgi": {
     "snapshotDate": "2026-10-01",
@@ -24,9 +22,11 @@
     "unresolved": 7
   },
   "checks": {
-    "regressionTestsPassed": 127,
+    "regressionTestsPassed": 181,
     "siteChecksPassed": 24,
-    "sanitized": true
+    "sanitized": true,
+    "previousAcceptedGeometryPreserved": 47835,
+    "restoredCoordinates": 424
   },
-  "buildRun": "https://github.com/almazadagamov1-svg/water-area-check/actions/runs/37914858666"
+  "buildRun": "https://github.com/almazadagamov1-svg/water-area-check/actions/runs/37934278760"
 }
