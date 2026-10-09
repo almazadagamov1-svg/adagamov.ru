@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -21,6 +22,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -49,5 +52,28 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
+      - name: Wait for this attempt's Pages artifact
+        uses: actions/github-script@v8
+        timeout-minutes: 2
+        with:
+          script: |
+            const name = process.env.PAGES_ARTIFACT_NAME;
+            for (let attempt = 1; attempt <= 12; attempt++) {
+              const { data } = await github.rest.actions.listWorkflowRunArtifacts({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: context.runId,
+                per_page: 100,
+              });
+              const matches = data.artifacts.filter(a => a.name === name && !a.expired);
+              core.info(`Artifact readiness ${attempt}/12: ${matches.length} matching artifact(s)`);
+              if (matches.length === 1) return;
+              if (matches.length > 1) throw new Error("Ambiguous Pages artifact for this attempt");
+              if (attempt < 12) await new Promise(resolve => setTimeout(resolve, 5000));
+            }
+            throw new Error("Pages artifact did not become visible within the bounded wait");
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
