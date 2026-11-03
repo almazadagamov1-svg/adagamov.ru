@@ -1,20 +1,26 @@
 {
-  "releaseId": "85d6345e64306bdc",
+  "schema": 1,
+  "releaseId": "522b9c41563ae33c",
   "sourceRepository": "almazadagamov1-svg/water-area-check",
-  "sourceCommit": "7cc27ba5f4f149391e4fc5b75292b9c5faab3c83",
-  "buildCommit": "14e93b534d7dc4aac715cf9165e4cd13374d81eb",
-  "archiveSha256": "5c80a09ccd09cf76cd3f11a0d8b372c9acf9feba247ee8777275d41d7b287876",
-  "archiveBytes": 29289107,
-  "gvr": {
-    "sourceRecords": 50955,
-    "records": 50954,
+  "sourceCommit": "9bc1ab705441fdafa6b8ecd2b7467c8dbf36bc0d",
+  "buildCommit": "e7e3e3d59995e74bcbd3bfd0a2350aeda0b0818d",
+  "sourceCiRunId": 41634706982,
+  "sourceCiConclusion": "success",
+  "archiveSha256": "d9031d8e68e6247deaa259031693a020d6b715b026618ba048725cb3d5393d2a",
+  "archiveBytes": 29691251,
+  "parts": 57,
+  "gvrSourceDate": "2026-10-22",
+  "gvrSourceSha256": "a59a22d8fe99f31fdc2571d78df1b356be8f0aec0e0ab4280066e1e0574c19ff",
+  "gvrCounts": {
+    "sourceRecords": 51150,
+    "records": 51149,
     "duplicatesSuppressed": 1,
-    "pass": 48305,
-    "hints": 2649,
+    "pass": 48437,
+    "hints": 2712,
     "regions": 89,
-    "sourceTiles": 1801
+    "sourceTiles": 1799
   },
-  "torgi": {
+  "torgiCounts": {
     "snapshotDate": "2026-10-01",
     "total": 228,
     "pass": 171,
@@ -22,13 +28,13 @@
     "unresolved": 7
   },
   "checks": {
-    "regressionTestsPassed": 299,
     "siteChecksPassed": 24,
+    "sourceQualityAndKmlPassed": 20,
+    "sourceContextGuardsPassed": 6,
     "sanitized": true,
-    "previousAcceptedGeometryPreserved": 48259,
-    "restoredCoordinates": 46,
-    "partialSourceRecords": 10
+    "unchangedSourceGeometryRegressions": 0,
+    "unchangedSourceGeometryMutations": 0,
+    "preservedReviewedSourceContexts": 467
   },
-  "buildRun": "https://github.com/almazadagamov1-svg/water-area-check/actions/runs/38077832979",
-  "mainChecksRun": "https://github.com/almazadagamov1-svg/water-area-check/actions/runs/38078611851"
+  "buildRun": "https://github.com/almazadagamov1-svg/water-area-check/actions/runs/41634706982"
 }
