@@ -7,6 +7,7 @@ on:
       - 'release/pages-release.part-*'
       - 'release/pages-release.sha256'
       - '.github/workflows/pages.yml'
+      - 'trials/kazan-geometry/**'
   workflow_dispatch:
 
 permissions:
@@ -48,6 +49,45 @@ jobs:
           ! rg -l 'chatgpt.site|signin-with-chatgpt' _site --glob '*.html' --glob '*.js'
           printf '%s\n' adagamov.ru > _site/CNAME
           touch _site/.nojekyll
+      - name: Verify and add bounded Kazan geometry trial
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,re
+          from pathlib import Path
+          root=Path('trials/kazan-geometry')
+          manifest=json.loads((root/'manifest.json').read_text())
+          body=(root/'index.html').read_bytes()
+          assert hashlib.sha256(body).hexdigest()==manifest['htmlSha256'], 'Trial HTML checksum mismatch'
+          text=body.decode()
+          match=re.search(r'<script id="trial-data" type="application/json">(.*?)</script>',text,re.S)
+          assert match, 'Trial payload missing'
+          assert hashlib.sha256(match.group(1).encode()).hexdigest()==manifest['dataSha256'], 'Trial data checksum mismatch'
+          data=json.loads(match.group(1))
+          assert data['trialId']==manifest['trialId']
+          assert data['sourceDate']==manifest['sourceDate']=='2026-10-22'
+          assert data['spatialClaim'] is False
+          assert data['counts']==manifest['counts']=={'source_ring':5,'source_gap':1,'open_sequence':1,'points_only':4}
+          assert len(data['records'])==manifest['records']==11
+          west,south,east,north=data['bounds']
+          for record in data['records']:
+              assert record['spatialClaim'] is False and record['sourceGeometryChanged'] is False
+              assert all(west<=p[0]<=east and south<=p[1]<=north for p in record['points'])
+          forbidden={'holder','inn','sourcePayloadHash','sourceRow','originalRawCoordinates','place_raw','h','i','l'}
+          def inspect(value):
+              if isinstance(value,dict):
+                  assert not forbidden.intersection(value), 'Private source field in trial'
+                  for item in value.values():inspect(item)
+              elif isinstance(value,list):
+                  for item in value:inspect(item)
+          inspect(data)
+          assert 'chatgpt.site' not in text and 'signin-with-chatgpt' not in text
+          print('Verified Kazan trial',manifest['trialId'])
+          PY
+          mkdir -p _site/karta-gvr/kazan-trial
+          cp trials/kazan-geometry/index.html _site/karta-gvr/kazan-trial/index.html
+          cp trials/kazan-geometry/manifest.json _site/karta-gvr/kazan-trial/manifest.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

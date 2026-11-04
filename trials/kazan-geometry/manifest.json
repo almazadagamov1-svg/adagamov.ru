@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "trialId": "7b0647998c5ba85e",
+  "sourceDate": "2026-10-22",
+  "baseRelease": "522b9c41563ae33c",
+  "bounds": [
+    48.94,
+    55.67,
+    49.1,
+    55.77
+  ],
+  "spatialClaim": false,
+  "counts": {
+    "source_ring": 5,
+    "source_gap": 1,
+    "open_sequence": 1,
+    "points_only": 4
+  },
+  "records": 11,
+  "context": 67,
+  "dataSha256": "891bc211159aa1cc50a0c340d900505d504050745a7e576d805f4e310d81d9bc",
+  "htmlSha256": "876d830a0cf45322e9efd91c83c6d943bdc1968b8dcbe102e3f1a82cfd18901e"
+}
