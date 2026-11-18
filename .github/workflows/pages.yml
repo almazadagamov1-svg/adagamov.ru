@@ -46,7 +46,14 @@ jobs:
           test ! -e _site/data/torgi/evidence
           test ! -e _site/data/torgi/card-evidence
           test ! -e _site/data/torgi/regions
-          ! rg -l 'chatgpt.site|signin-with-chatgpt' _site --glob '*.html' --glob '*.js'
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          pattern=re.compile(rb'chatgpt.site|signin-with-chatgpt')
+          blocked=[str(p) for p in Path('_site').rglob('*') if p.suffix in {'.html','.js'} and p.is_file() and pattern.search(p.read_bytes())]
+          if blocked:raise SystemExit('Blocked authentication reference in: '+', '.join(blocked))
+          print('Verified public HTML/JS references')
+          PY
           printf '%s\n' adagamov.ru > _site/CNAME
           touch _site/.nojekyll
       - name: Verify and add bounded Kazan geometry trial
