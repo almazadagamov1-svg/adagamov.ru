@@ -75,7 +75,18 @@ jobs:
           assert data['trialId']==manifest['trialId']
           assert data['sourceDate']==manifest['sourceDate']=='2026-10-22'
           assert data['spatialClaim'] is False
-          assert data['counts']==manifest['counts']=={'source_ring':5,'source_gap':1,'open_sequence':1,'points_only':4}
+          assert data['counts']==manifest['counts']=={'source_ring':5,'calculated':4,'unresolved':2}
+          assert data['schema']==manifest['schema']==2
+          assert data['revision']==manifest['revision']=='closed-views-v2'
+          assert data['coordinateCheckDate']==manifest['coordinateCheckDate']=='2026-11-12'
+          assert data['bounds']==manifest['bounds']==[48.94,55.67,49.1,55.77]
+          assert data['baseRelease']==manifest['baseRelease']=='522b9c41563ae33c'
+          from collections import Counter
+          assert dict(Counter(r['kind'] for r in data['records']))==data['counts']
+          assert sum(bool(r['after']) for r in data['records'])==manifest['contourRecords']==9
+          assert sum(len(r['after']) for r in data['records'])==manifest['polygonParts']==10
+          assert all(g['type']=='Polygon' and g['coordinates'][0][0]==g['coordinates'][0][-1] for r in data['records'] for g in r['after'])
+          assert all(r['after']==[] for r in data['records'] if r['kind']=='unresolved')
           assert len(data['records'])==manifest['records']==11
           west,south,east,north=data['bounds']
           for record in data['records']:

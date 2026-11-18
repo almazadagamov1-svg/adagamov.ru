@@ -1,7 +1,9 @@
 {
-  "schema": 1,
-  "trialId": "7b0647998c5ba85e",
+  "schema": 2,
+  "revision": "closed-views-v2",
+  "trialId": "64cf3776a951ea67",
   "sourceDate": "2026-10-22",
+  "coordinateCheckDate": "2026-11-12",
   "baseRelease": "522b9c41563ae33c",
   "bounds": [
     48.94,
@@ -11,13 +13,14 @@
   ],
   "spatialClaim": false,
   "counts": {
+    "calculated": 4,
     "source_ring": 5,
-    "source_gap": 1,
-    "open_sequence": 1,
-    "points_only": 4
+    "unresolved": 2
   },
   "records": 11,
+  "contourRecords": 9,
+  "polygonParts": 10,
   "context": 67,
-  "dataSha256": "891bc211159aa1cc50a0c340d900505d504050745a7e576d805f4e310d81d9bc",
-  "htmlSha256": "9c70e38221094b39f87f6acd2b70f8cc89c2da6b4c27cac6b0c2bc956d1bfdd4"
+  "dataSha256": "6461129a341d1d672de03883f50b0dea7c4afea66abd7d39f48880b3473ce1d9",
+  "htmlSha256": "84e7a74e06596c24d24f746c9e89bab36784433645b02ae3429c4513c44419ab"
 }
