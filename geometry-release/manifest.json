@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "kind": "gvr-display-reconstruction-overlay",
+  "baseArchiveSha256": "d9031d8e68e6247deaa259031693a020d6b715b026618ba048725cb3d5393d2a",
+  "baseRelease": "522b9c41563ae33c",
+  "release": {
+    "schema": 1,
+    "releaseId": "1f362abc0269eeda",
+    "gvrSourceDate": "2026-10-22",
+    "gvrSourceSha256": "a59a22d8fe99f31fdc2571d78df1b356be8f0aec0e0ab4280066e1e0574c19ff",
+    "torgiSnapshotDate": "2026-10-01"
+  },
+  "archiveBytes": 177281,
+  "archiveSha256": "600ec939baaa3bc7e27bac566a14450d86ae804bf3dffbe321d3d8d41e34c32c",
+  "parts": [
+    {
+      "file": "overlay.part-000.b64",
+      "bytes": 236377,
+      "sha256": "dbc22b5f23fe537fc8c7f013045a29c7678fc7a69dfab06093fb7704de664507"
+    }
+  ],
+  "files": [
+    {
+      "file": "404.html",
+      "bytes": 11060,
+      "sha256": "9da379b1b807eab6689259082d88dbf36cc0a8c29c5a8c6ac596e5cf09f7a547"
+    },
+    {
+      "file": "404/index.html",
+      "bytes": 11060,
+      "sha256": "9da379b1b807eab6689259082d88dbf36cc0a8c29c5a8c6ac596e5cf09f7a547"
+    },
+    {
+      "file": "__next.__PAGE__.txt",
+      "bytes": 2853,
+      "sha256": "35b0436fa492760ee6f08e020f969adb0f8873b1486c13a0bc5d3254da8d5477"
+    },
+    {
+      "file": "__next._full.txt",
+      "bytes": 7618,
+      "sha256": "39382eee2f5c4cc39ed1191aedee77df0371797423ccb528ead0ea231ec0a837"
+    },
+    {
+      "file": "__next._head.txt",
+      "bytes": 2488,
+      "sha256": "ead077c77cbfa1c8789fd00df83ef1d23ee351998f31de747aa607dd84656e93"
+    },
+    {
+      "file": "__next._index.txt",
+      "bytes": 1771,
+      "sha256": "93c781eb4f6fb621843750a040d7fa0800b93c4c4bbf80c8cc41ea0cf94bb7a7"
+    },
+    {
+      "file": "__next._tree.txt",
+      "bytes": 298,
+      "sha256": "2ff5b3d56226ee20ef72324d109b881f1a3dfbefcdf43278931e6a0296b0e455"
+    },
+    {
+      "file": "_next/static/_t-H1-EvkkV1aOTBDPXAV/_buildManifest.js",
+      "bytes": 219,
+      "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea"
+    },
+    {
+      "file": "_next/static/_t-H1-EvkkV1aOTBDPXAV/_clientMiddlewareManifest.js",
+      "bytes": 96,
+      "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a"
+    },
+    {
+      "file": "_next/static/_t-H1-EvkkV1aOTBDPXAV/_ssgManifest.js",
+      "bytes": 80,
+      "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00"
+    },
+    {
+      "file": "_next/static/chunks/0a0d1ziqbpy~4.js",
+      "bytes": 121287,
+      "sha256": "fdfae599f55ef616c35cd25ee5ac454ea6fa3d2a8a5db59d50c28e4742d5baf5"
+    },
+    {
+      "file": "_next/static/chunks/0dpa04reuyj.s.css",
+      "bytes": 83286,
+      "sha256": "f2e383626e1df471f874a030779b19503c9fc337db5303befeec30a40cfdc02b"
+    },
+    {
+      "file": "_not-found/__next._full.txt",
+      "bytes": 6603,
+      "sha256": "e2d724407cc94d7bf83982aaad350874b4b4331d2248f434d930095c30d3acc3"
+    },
+    {
+      "file": "_not-found/__next._head.txt",
+      "bytes": 2539,
+      "sha256": "b5817ed7a93aa49b44fef76533d76a5475c09b76176a8e2dcf80a7aa523102b0"
+    },
+    {
+      "file": "_not-found/__next._index.txt",
+      "bytes": 1771,
+      "sha256": "93c781eb4f6fb621843750a040d7fa0800b93c4c4bbf80c8cc41ea0cf94bb7a7"
+    },
+    {
+      "file": "_not-found/__next._not-found.__PAGE__.txt",
+      "bytes": 1422,
+      "sha256": "b63fd3b4f8dbb3d1eff155e683b0504a8812f6d0a8ee7f5db00ff3af8268cf9d"
+    },
+    {
+      "file": "_not-found/__next._not-found.txt",
+      "bytes": 365,
+      "sha256": "7535949529fc39c318198a7308fa1c331b7b5bb5d8d69b67805b9395bc4b4970"
+    },
+    {
+      "file": "_not-found/__next._tree.txt",
+      "bytes": 319,
+      "sha256": "01eb72d0234a9626f9328f2e93298e7c83e3ce44bb2069520e119893dd8ef99c"
+    },
+    {
+      "file": "_not-found/index.html",
+      "bytes": 11060,
+      "sha256": "9da379b1b807eab6689259082d88dbf36cc0a8c29c5a8c6ac596e5cf09f7a547"
+    },
+    {
+      "file": "_not-found/index.txt",
+      "bytes": 6603,
+      "sha256": "e2d724407cc94d7bf83982aaad350874b4b4331d2248f434d930095c30d3acc3"
+    },
+    {
+      "file": "data/gvr/map/inference-reconstructed.json",
+      "bytes": 693239,
+      "sha256": "1070173a4bb3ca3a41c8001a60835f68f457205c33f3d215636bd872aa217791"
+    },
+    {
+      "file": "data/gvr/map/manifest.json",
+      "bytes": 30801,
+      "sha256": "4d61c75b1479e384e8f4837add8bfb9840cb479703cb93c252c06872253f59ab"
+    },
+    {
+      "file": "index.html",
+      "bytes": 13119,
+      "sha256": "8ef100e9a3c2affe888d78e31ea58b1cd1af5b31a7f60ae84f6455a91c2eb4de"
+    },
+    {
+      "file": "index.txt",
+      "bytes": 7618,
+      "sha256": "39382eee2f5c4cc39ed1191aedee77df0371797423ccb528ead0ea231ec0a837"
+    },
+    {
+      "file": "karta-gvr/__next._full.txt",
+      "bytes": 6663,
+      "sha256": "70c238c2d5a4e8c5b7c353d4ef99e5a853c968913c72e0532c9b71841b18cd87"
+    },
+    {
+      "file": "karta-gvr/__next._head.txt",
+      "bytes": 2855,
+      "sha256": "dad6433bd9fcdba01e9e6369cc30a87f371304fe1c24569d764f9d017db11efa"
+    },
+    {
+      "file": "karta-gvr/__next._index.txt",
+      "bytes": 1771,
+      "sha256": "93c781eb4f6fb621843750a040d7fa0800b93c4c4bbf80c8cc41ea0cf94bb7a7"
+    },
+    {
+      "file": "karta-gvr/__next._tree.txt",
+      "bytes": 317,
+      "sha256": "89bd8e5bdbf8a71e2c4e0ba2a5d2d93c99f3b342fa476e7be13822a19a3c4aae"
+    },
+    {
+      "file": "karta-gvr/__next.karta-gvr.__PAGE__.txt",
+      "bytes": 1123,
+      "sha256": "884de641cebb695ba71711a331709471147b2e5d3415280c7bd4c4483bc48e11"
+    },
+    {
+      "file": "karta-gvr/__next.karta-gvr.txt",
+      "bytes": 365,
+      "sha256": "7535949529fc39c318198a7308fa1c331b7b5bb5d8d69b67805b9395bc4b4970"
+    },
+    {
+      "file": "karta-gvr/index.html",
+      "bytes": 19673,
+      "sha256": "9176bcf0f55d16c8b906d86a3fd1e8bf02fc2e23c0c4d441b6524f9b04e38484"
+    },
+    {
+      "file": "karta-gvr/index.txt",
+      "bytes": 6663,
+      "sha256": "70c238c2d5a4e8c5b7c353d4ef99e5a853c968913c72e0532c9b71841b18cd87"
+    },
+    {
+      "file": "release.json",
+      "bytes": 190,
+      "sha256": "3ece9bb38913daa8669a98e3c2fb82f3ffc62ea899dca4f4d178dacd57e62a75"
+    }
+  ],
+  "sourceGeometryChanged": false,
+  "display": {
+    "records": 4187,
+    "polygonRecords": 1415,
+    "polygons": 2175,
+    "holes": 5,
+    "sha256": "1070173a4bb3ca3a41c8001a60835f68f457205c33f3d215636bd872aa217791",
+    "spatialClaim": false
+  }
+}

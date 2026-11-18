@@ -8,6 +8,7 @@ on:
       - 'release/pages-release.sha256'
       - '.github/workflows/pages.yml'
       - 'trials/kazan-geometry/**'
+      - 'geometry-release/**'
   workflow_dispatch:
 
 permissions:
@@ -56,6 +57,9 @@ jobs:
           PY
           printf '%s\n' adagamov.ru > _site/CNAME
           touch _site/.nojekyll
+      - name: Verify and apply federal display reconstruction
+        shell: bash
+        run: python geometry-release/apply.py _site /tmp/pages-release.tar.gz
       - name: Verify and add bounded Kazan geometry trial
         shell: bash
         run: |
