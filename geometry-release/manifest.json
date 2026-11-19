@@ -3,118 +3,133 @@
   "kind": "gvr-display-reconstruction-overlay",
   "baseArchiveSha256": "d9031d8e68e6247deaa259031693a020d6b715b026618ba048725cb3d5393d2a",
   "baseRelease": "522b9c41563ae33c",
-  "previousRelease": "1f362abc0269eeda",
+  "previousRelease": "fe5d0cc04c7ab494",
   "release": {
     "schema": 1,
-    "releaseId": "fe5d0cc04c7ab494",
+    "releaseId": "114640d1913f8fe1",
     "gvrSourceDate": "2026-10-22",
     "gvrSourceSha256": "a59a22d8fe99f31fdc2571d78df1b356be8f0aec0e0ab4280066e1e0574c19ff",
     "torgiSnapshotDate": "2026-10-01"
   },
-  "archiveBytes": 165821,
-  "archiveSha256": "80f03cea47272a251d440c2f1677fb9a2d5d63043935f8d57c33e9fbf243ea92",
+  "archiveBytes": 284937,
+  "archiveSha256": "73b5f6a02f8a8502959c5d6f28da21144838509bdcbb53e178cea76d7ee9851b",
   "parts": [
     {
       "file": "overlay.part-000.b64",
-      "bytes": 221097,
-      "sha256": "02bdf876a6aaf1c835434de91172ab6eefdf55443a42d0028520643c84984784"
+      "bytes": 350001,
+      "sha256": "a3566b32ef5dc440bf49560284e0be4f7f30a3e04d1ca85daaeb9754fbbe1d7a"
+    },
+    {
+      "file": "overlay.part-001.b64",
+      "bytes": 29917,
+      "sha256": "7979b34a884e2acd989867c2ded0132820654cd207a3eca9c2dae10c743ad77b"
     }
   ],
   "files": [
     {
       "file": "404.html",
       "bytes": 11060,
-      "sha256": "416f2a26953f8825c201640855ec47b999e6a7d77f0c8bd008d24d566c0c6f1d"
+      "sha256": "4b459741e8f68e0f5e4aeca176d0ea287e9858fee39606ab57ec49217fecefea"
     },
     {
       "file": "404/index.html",
       "bytes": 11060,
-      "sha256": "416f2a26953f8825c201640855ec47b999e6a7d77f0c8bd008d24d566c0c6f1d"
+      "sha256": "4b459741e8f68e0f5e4aeca176d0ea287e9858fee39606ab57ec49217fecefea"
     },
     {
       "file": "__next.__PAGE__.txt",
       "bytes": 2853,
-      "sha256": "0a0a23e5a87b9da1ca4947c1c2769493ff7a36788b9239f78b5f67f5d169f131"
+      "sha256": "2c6d48985f67d541f40a5080cd986c683e611d5e51b9a5307eebf43b16f38e59"
     },
     {
       "file": "__next._full.txt",
       "bytes": 7618,
-      "sha256": "5bcd9ece0ace5eea339344e5cb881b6f45756b4c9e3aa31220b6feb85ed72a64"
+      "sha256": "cbf803c8c3bb7ad18318b4ed50976404183bb05e84aa1870dd11199c1199bc83"
     },
     {
       "file": "__next._head.txt",
       "bytes": 2488,
-      "sha256": "9de52f9c99bb4ded5798f19bbd01aad826ff0965ac36e9de421942ace43bd664"
+      "sha256": "13d4d95c94fc9ff5f9c5db196859b612d541db3efff342df1caf7f9084f79f9f"
     },
     {
       "file": "__next._index.txt",
       "bytes": 1771,
-      "sha256": "065670b3d51469e8d73f2c14dbe82489e1364781ab9e0dc52ac3e4e3194aafee"
+      "sha256": "0a99494c717dc4e8bb7cd6a28507fb5dcc76b4450fd6671d33bb4fcd10f083db"
     },
     {
       "file": "__next._tree.txt",
       "bytes": 298,
-      "sha256": "c3c16c1057f68ab87ef0c64ecc8247393b45cbb604e2ed5109a0123d6e3eedec"
+      "sha256": "6fc013440090ec78b4068daa1cc6425a0ce974a545a7e92cb12ed83580c21477"
     },
     {
-      "file": "_next/static/EOhAW0cYn3XCNwBMzTfCi/_buildManifest.js",
+      "file": "_next/static/chunks/03-104zjeitnt.css",
+      "bytes": 84374,
+      "sha256": "df65d5790b7b8d6698f00d75e0279fad51143cab0d0c52bde10d68fab1d23255"
+    },
+    {
+      "file": "_next/static/chunks/0sxe-~bwqq-wb.js",
+      "bytes": 122386,
+      "sha256": "536161b0374764b0d9d6593ebe4ec996ad893ffc9082ac554dcfe3b9287d5f91"
+    },
+    {
+      "file": "_next/static/vB6WWSfn47aI8VhZUMSxt/_buildManifest.js",
       "bytes": 219,
       "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea"
     },
     {
-      "file": "_next/static/EOhAW0cYn3XCNwBMzTfCi/_clientMiddlewareManifest.js",
+      "file": "_next/static/vB6WWSfn47aI8VhZUMSxt/_clientMiddlewareManifest.js",
       "bytes": 96,
       "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a"
     },
     {
-      "file": "_next/static/EOhAW0cYn3XCNwBMzTfCi/_ssgManifest.js",
+      "file": "_next/static/vB6WWSfn47aI8VhZUMSxt/_ssgManifest.js",
       "bytes": 80,
       "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00"
     },
     {
-      "file": "_next/static/chunks/0a0d1ziqbpy~4.js",
-      "bytes": 121287,
-      "sha256": "fdfae599f55ef616c35cd25ee5ac454ea6fa3d2a8a5db59d50c28e4742d5baf5"
-    },
-    {
       "file": "_not-found/__next._full.txt",
       "bytes": 6603,
-      "sha256": "b34623381a1a2ef5f119f83cc631f33118508cf7aad16ffed4e475976e13e55a"
+      "sha256": "b4dddaeec597c057d38c5451e5b9e33d3d93703fe962214c04bfd32507357a90"
     },
     {
       "file": "_not-found/__next._head.txt",
       "bytes": 2539,
-      "sha256": "0b45114ce8b16439458656f9b4fdcfdbfa735892af446e529dee73c4c6835571"
+      "sha256": "052c6cc8f5143843f3e77f6ab4fe43d9966d41566dbff8e49eb657573aff2a17"
     },
     {
       "file": "_not-found/__next._index.txt",
       "bytes": 1771,
-      "sha256": "065670b3d51469e8d73f2c14dbe82489e1364781ab9e0dc52ac3e4e3194aafee"
+      "sha256": "0a99494c717dc4e8bb7cd6a28507fb5dcc76b4450fd6671d33bb4fcd10f083db"
     },
     {
       "file": "_not-found/__next._not-found.__PAGE__.txt",
       "bytes": 1422,
-      "sha256": "fef6657d02bf80f0c66a924e94326dd26166d1947eb3368f1240a047432630e9"
+      "sha256": "e47309f6b0e77103daf583947b5f03f32dbfed364f5048fd7c343918d7dd70fa"
     },
     {
       "file": "_not-found/__next._not-found.txt",
       "bytes": 365,
-      "sha256": "e5bd53cc6088433ac3df91b38e2bb9d1dd1d69cdc40dc26d8a5f204efd77a6d3"
+      "sha256": "1fc7b886405ba11f7918c90c4cbeec4f9a7e8deb3c309ec10569ef928bb78676"
     },
     {
       "file": "_not-found/__next._tree.txt",
       "bytes": 319,
-      "sha256": "8b647b18e49d526a60cb5136c9fd3ce1f5e1ebcda5583aca14b3ce8324dad4f8"
+      "sha256": "c03fafca42ed7e1612ff640f5955cfe33151f710011d3775522c05501d253e51"
     },
     {
       "file": "_not-found/index.html",
       "bytes": 11060,
-      "sha256": "416f2a26953f8825c201640855ec47b999e6a7d77f0c8bd008d24d566c0c6f1d"
+      "sha256": "4b459741e8f68e0f5e4aeca176d0ea287e9858fee39606ab57ec49217fecefea"
     },
     {
       "file": "_not-found/index.txt",
       "bytes": 6603,
-      "sha256": "b34623381a1a2ef5f119f83cc631f33118508cf7aad16ffed4e475976e13e55a"
+      "sha256": "b4dddaeec597c057d38c5451e5b9e33d3d93703fe962214c04bfd32507357a90"
+    },
+    {
+      "file": "data/gvr/map/inference-reassembled.json",
+      "bytes": 721550,
+      "sha256": "0d5fe0d14eb5d1080013d14027c491288c234f2b5dc3cc670de2e4cfcce70019"
     },
     {
       "file": "data/gvr/map/inference-reconstructed.json",
@@ -123,78 +138,82 @@
     },
     {
       "file": "data/gvr/map/manifest.json",
-      "bytes": 30801,
-      "sha256": "52408397f6990b215e790e7fbaf67a4e989457e78039d5a57b2ddcd15abb5770"
+      "bytes": 31167,
+      "sha256": "366c61d58f725044ef9c35a5d807a77b1066edb0495c93544136a134dc85e450"
     },
     {
       "file": "index.html",
       "bytes": 13119,
-      "sha256": "c98dceac0c96a432ee406f5ecd0693be6bec435bfa6d92900bd724d2b7d5daf9"
+      "sha256": "2ed69099d3247cd6623d510bab2921fc2ca92baf2c53f4125e1a754334cd979d"
     },
     {
       "file": "index.txt",
       "bytes": 7618,
-      "sha256": "5bcd9ece0ace5eea339344e5cb881b6f45756b4c9e3aa31220b6feb85ed72a64"
+      "sha256": "cbf803c8c3bb7ad18318b4ed50976404183bb05e84aa1870dd11199c1199bc83"
     },
     {
       "file": "karta-gvr/__next._full.txt",
       "bytes": 6663,
-      "sha256": "76b18b6abbae1d3cebd0ee8d6b4207f25239a620376a43c130f79cb5ef2b568d"
+      "sha256": "b8ce10c7c91fd27e0dd8db89085e8d2d327a6d85e2d7c2b35b99b94c969beb3e"
     },
     {
       "file": "karta-gvr/__next._head.txt",
       "bytes": 2855,
-      "sha256": "5a40f9ffb9cf94da247d0500960ae877faa1279b9409f3f6bdad3faab071b3c5"
+      "sha256": "2e3935534c19641ab1e39a2fdebf35e83659798c9fbbee10a1682aff1093ba41"
     },
     {
       "file": "karta-gvr/__next._index.txt",
       "bytes": 1771,
-      "sha256": "065670b3d51469e8d73f2c14dbe82489e1364781ab9e0dc52ac3e4e3194aafee"
+      "sha256": "0a99494c717dc4e8bb7cd6a28507fb5dcc76b4450fd6671d33bb4fcd10f083db"
     },
     {
       "file": "karta-gvr/__next._tree.txt",
       "bytes": 317,
-      "sha256": "69dbed7580393429c78211e119359521794fe9ed52daba10e138d6f66e74be1e"
+      "sha256": "60c561a788157e639e565a273174b5548f6f6760331766b489348d50bae2bc93"
     },
     {
       "file": "karta-gvr/__next.karta-gvr.__PAGE__.txt",
       "bytes": 1123,
-      "sha256": "e68eda534566ecced42dbe9362ec592b5c4ab304b2354c90e6bd553a029dd17e"
+      "sha256": "b73b64f0cf2b2dc5cc4ba7f8130f7f0fb7fb21826731d6272e6cf48c432ccb0b"
     },
     {
       "file": "karta-gvr/__next.karta-gvr.txt",
       "bytes": 365,
-      "sha256": "e5bd53cc6088433ac3df91b38e2bb9d1dd1d69cdc40dc26d8a5f204efd77a6d3"
+      "sha256": "1fc7b886405ba11f7918c90c4cbeec4f9a7e8deb3c309ec10569ef928bb78676"
     },
     {
       "file": "karta-gvr/index.html",
       "bytes": 19673,
-      "sha256": "cda721629068f566d133b51f8c2ffaee491b68b9d73fb48c960d4aabc09a180e"
+      "sha256": "11e1fe7d2e20b3114b07abefaca1ee056389d422e9ce9efcc618098540dc2345"
     },
     {
       "file": "karta-gvr/index.txt",
       "bytes": 6663,
-      "sha256": "76b18b6abbae1d3cebd0ee8d6b4207f25239a620376a43c130f79cb5ef2b568d"
+      "sha256": "b8ce10c7c91fd27e0dd8db89085e8d2d327a6d85e2d7c2b35b99b94c969beb3e"
     },
     {
       "file": "release.json",
       "bytes": 190,
-      "sha256": "e6f806d8a17a149b6d05dd31378c4a497a07631be5ff1c83dc438203aecd054b"
+      "sha256": "7c4f1a8984be2697b18bfa66bce897b583824ee8ac3b48eaaa8a9a38ff7f640e"
     }
   ],
   "sourceGeometryChanged": false,
+  "compatibilityArtifactSha256": "a28658f459f703d220ff4d7d45741b9a35641d5014514b85ff76316c44446ba1",
   "display": {
     "records": 4187,
-    "polygonRecords": 2224,
-    "polygons": 3045,
+    "polygonRecords": 2230,
+    "polygons": 3057,
     "holes": 5,
-    "sha256": "a28658f459f703d220ff4d7d45741b9a35641d5014514b85ff76316c44446ba1",
+    "sha256": "0d5fe0d14eb5d1080013d14027c491288c234f2b5dc3cc670de2e4cfcce70019",
     "engineSha256": "cfc8bd7321f8c19732788a31b55c283ca0afa69c7449671a600aa74b5d54c876",
+    "reassemblySha256": "5c1229a1e13f47c84dab4d19127e269e82dcfed7c154f48806187d9c476368e3",
+    "registrySha256": "0b5aee9c135b241555d1cd38aa2a95bf7ffed69dc10bfecc0ef9d11fda744588",
+    "artifact": "/data/gvr/map/inference-reassembled.json",
     "spatialClaim": false
   },
   "validation": {
-    "protectedFilesUnchanged": 1963,
+    "protectedFilesUnchanged": 1964,
     "changedFiles": 27,
-    "addedFiles": 5
+    "addedFiles": 7
   }
 }

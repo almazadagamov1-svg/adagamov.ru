@@ -14,7 +14,7 @@ assert json.loads((SITE/'release.json').read_text())['releaseId']==m['baseReleas
 def allowed(name):
  p=PurePosixPath(name)
  if p.is_absolute() or '..' in p.parts or str(p)!=name:return False
- return (name.startswith(('_next/static/','karta-gvr/','404/','_not-found/')) or name.startswith('__next.') and name.endswith('.txt') or name in {'404.html','index.html','index.txt','release.json','data/gvr/map/manifest.json','data/gvr/map/inference-reconstructed.json'}) and not name.startswith('karta-gvr/kazan-trial/')
+ return (name.startswith(('_next/static/','karta-gvr/','404/','_not-found/')) or name.startswith('__next.') and name.endswith('.txt') or name in {'404.html','index.html','index.txt','release.json','data/gvr/map/manifest.json','data/gvr/map/inference-reconstructed.json','data/gvr/map/inference-reassembled.json'}) and not name.startswith('karta-gvr/kazan-trial/')
 
 chunks=[]
 for e in m['parts']:
@@ -37,11 +37,14 @@ release=json.loads((SITE/'release.json').read_text());assert release==m['release
 index=json.loads((SITE/'data/gvr/map/manifest.json').read_text())
 assert index['sourceDate']==release['gvrSourceDate']=='2026-10-22'
 assert index['sourceSha256']==release['gvrSourceSha256']
-ref=index['files']['reconstructedInference'];assert ref['file']=='/data/gvr/map/inference-reconstructed.json'
+ref=index['files']['reassembledInference'];assert ref['file']=='/data/gvr/map/inference-reassembled.json'
 raw=(SITE/ref['file'].lstrip('/')).read_bytes()
 assert len(raw)==ref['bytes'] and sha(raw)==ref['sha256']==m['display']['sha256']
-data=json.loads(raw);assert data['schema']==3 and data['spatialClaim'] is False
+data=json.loads(raw);assert data['schema']==4 and data['spatialClaim'] is False
 assert data['engineSha256']==m['display']['engineSha256']
+assert data['reassemblySha256']==m['display']['reassemblySha256']
+assert data['registrySha256']==m['display']['registrySha256']
+assert sha((SITE/'data/gvr/map/inference-reconstructed.json').read_bytes())==m['compatibilityArtifactSha256']
 assert data['counts']==index['counts']['inference']
 assert data['counts']['presentationPolygon']==m['display']['polygons']
 assert data['counts']['holes']==m['display']['holes']
