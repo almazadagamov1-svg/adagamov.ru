@@ -3,70 +3,71 @@
   "kind": "gvr-display-reconstruction-overlay",
   "baseArchiveSha256": "d9031d8e68e6247deaa259031693a020d6b715b026618ba048725cb3d5393d2a",
   "baseRelease": "522b9c41563ae33c",
+  "previousRelease": "1f362abc0269eeda",
   "release": {
     "schema": 1,
-    "releaseId": "1f362abc0269eeda",
+    "releaseId": "fe5d0cc04c7ab494",
     "gvrSourceDate": "2026-10-22",
     "gvrSourceSha256": "a59a22d8fe99f31fdc2571d78df1b356be8f0aec0e0ab4280066e1e0574c19ff",
     "torgiSnapshotDate": "2026-10-01"
   },
-  "archiveBytes": 177281,
-  "archiveSha256": "600ec939baaa3bc7e27bac566a14450d86ae804bf3dffbe321d3d8d41e34c32c",
+  "archiveBytes": 165821,
+  "archiveSha256": "80f03cea47272a251d440c2f1677fb9a2d5d63043935f8d57c33e9fbf243ea92",
   "parts": [
     {
       "file": "overlay.part-000.b64",
-      "bytes": 236377,
-      "sha256": "dbc22b5f23fe537fc8c7f013045a29c7678fc7a69dfab06093fb7704de664507"
+      "bytes": 221097,
+      "sha256": "02bdf876a6aaf1c835434de91172ab6eefdf55443a42d0028520643c84984784"
     }
   ],
   "files": [
     {
       "file": "404.html",
       "bytes": 11060,
-      "sha256": "9da379b1b807eab6689259082d88dbf36cc0a8c29c5a8c6ac596e5cf09f7a547"
+      "sha256": "416f2a26953f8825c201640855ec47b999e6a7d77f0c8bd008d24d566c0c6f1d"
     },
     {
       "file": "404/index.html",
       "bytes": 11060,
-      "sha256": "9da379b1b807eab6689259082d88dbf36cc0a8c29c5a8c6ac596e5cf09f7a547"
+      "sha256": "416f2a26953f8825c201640855ec47b999e6a7d77f0c8bd008d24d566c0c6f1d"
     },
     {
       "file": "__next.__PAGE__.txt",
       "bytes": 2853,
-      "sha256": "35b0436fa492760ee6f08e020f969adb0f8873b1486c13a0bc5d3254da8d5477"
+      "sha256": "0a0a23e5a87b9da1ca4947c1c2769493ff7a36788b9239f78b5f67f5d169f131"
     },
     {
       "file": "__next._full.txt",
       "bytes": 7618,
-      "sha256": "39382eee2f5c4cc39ed1191aedee77df0371797423ccb528ead0ea231ec0a837"
+      "sha256": "5bcd9ece0ace5eea339344e5cb881b6f45756b4c9e3aa31220b6feb85ed72a64"
     },
     {
       "file": "__next._head.txt",
       "bytes": 2488,
-      "sha256": "ead077c77cbfa1c8789fd00df83ef1d23ee351998f31de747aa607dd84656e93"
+      "sha256": "9de52f9c99bb4ded5798f19bbd01aad826ff0965ac36e9de421942ace43bd664"
     },
     {
       "file": "__next._index.txt",
       "bytes": 1771,
-      "sha256": "93c781eb4f6fb621843750a040d7fa0800b93c4c4bbf80c8cc41ea0cf94bb7a7"
+      "sha256": "065670b3d51469e8d73f2c14dbe82489e1364781ab9e0dc52ac3e4e3194aafee"
     },
     {
       "file": "__next._tree.txt",
       "bytes": 298,
-      "sha256": "2ff5b3d56226ee20ef72324d109b881f1a3dfbefcdf43278931e6a0296b0e455"
+      "sha256": "c3c16c1057f68ab87ef0c64ecc8247393b45cbb604e2ed5109a0123d6e3eedec"
     },
     {
-      "file": "_next/static/_t-H1-EvkkV1aOTBDPXAV/_buildManifest.js",
+      "file": "_next/static/EOhAW0cYn3XCNwBMzTfCi/_buildManifest.js",
       "bytes": 219,
       "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea"
     },
     {
-      "file": "_next/static/_t-H1-EvkkV1aOTBDPXAV/_clientMiddlewareManifest.js",
+      "file": "_next/static/EOhAW0cYn3XCNwBMzTfCi/_clientMiddlewareManifest.js",
       "bytes": 96,
       "sha256": "5483e3295dc35dfe29ea932efc85341c916f10ff78ff5b0e965e003710893a4a"
     },
     {
-      "file": "_next/static/_t-H1-EvkkV1aOTBDPXAV/_ssgManifest.js",
+      "file": "_next/static/EOhAW0cYn3XCNwBMzTfCi/_ssgManifest.js",
       "bytes": 80,
       "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00"
     },
@@ -76,123 +77,124 @@
       "sha256": "fdfae599f55ef616c35cd25ee5ac454ea6fa3d2a8a5db59d50c28e4742d5baf5"
     },
     {
-      "file": "_next/static/chunks/0dpa04reuyj.s.css",
-      "bytes": 83286,
-      "sha256": "f2e383626e1df471f874a030779b19503c9fc337db5303befeec30a40cfdc02b"
-    },
-    {
       "file": "_not-found/__next._full.txt",
       "bytes": 6603,
-      "sha256": "e2d724407cc94d7bf83982aaad350874b4b4331d2248f434d930095c30d3acc3"
+      "sha256": "b34623381a1a2ef5f119f83cc631f33118508cf7aad16ffed4e475976e13e55a"
     },
     {
       "file": "_not-found/__next._head.txt",
       "bytes": 2539,
-      "sha256": "b5817ed7a93aa49b44fef76533d76a5475c09b76176a8e2dcf80a7aa523102b0"
+      "sha256": "0b45114ce8b16439458656f9b4fdcfdbfa735892af446e529dee73c4c6835571"
     },
     {
       "file": "_not-found/__next._index.txt",
       "bytes": 1771,
-      "sha256": "93c781eb4f6fb621843750a040d7fa0800b93c4c4bbf80c8cc41ea0cf94bb7a7"
+      "sha256": "065670b3d51469e8d73f2c14dbe82489e1364781ab9e0dc52ac3e4e3194aafee"
     },
     {
       "file": "_not-found/__next._not-found.__PAGE__.txt",
       "bytes": 1422,
-      "sha256": "b63fd3b4f8dbb3d1eff155e683b0504a8812f6d0a8ee7f5db00ff3af8268cf9d"
+      "sha256": "fef6657d02bf80f0c66a924e94326dd26166d1947eb3368f1240a047432630e9"
     },
     {
       "file": "_not-found/__next._not-found.txt",
       "bytes": 365,
-      "sha256": "7535949529fc39c318198a7308fa1c331b7b5bb5d8d69b67805b9395bc4b4970"
+      "sha256": "e5bd53cc6088433ac3df91b38e2bb9d1dd1d69cdc40dc26d8a5f204efd77a6d3"
     },
     {
       "file": "_not-found/__next._tree.txt",
       "bytes": 319,
-      "sha256": "01eb72d0234a9626f9328f2e93298e7c83e3ce44bb2069520e119893dd8ef99c"
+      "sha256": "8b647b18e49d526a60cb5136c9fd3ce1f5e1ebcda5583aca14b3ce8324dad4f8"
     },
     {
       "file": "_not-found/index.html",
       "bytes": 11060,
-      "sha256": "9da379b1b807eab6689259082d88dbf36cc0a8c29c5a8c6ac596e5cf09f7a547"
+      "sha256": "416f2a26953f8825c201640855ec47b999e6a7d77f0c8bd008d24d566c0c6f1d"
     },
     {
       "file": "_not-found/index.txt",
       "bytes": 6603,
-      "sha256": "e2d724407cc94d7bf83982aaad350874b4b4331d2248f434d930095c30d3acc3"
+      "sha256": "b34623381a1a2ef5f119f83cc631f33118508cf7aad16ffed4e475976e13e55a"
     },
     {
       "file": "data/gvr/map/inference-reconstructed.json",
-      "bytes": 693239,
-      "sha256": "1070173a4bb3ca3a41c8001a60835f68f457205c33f3d215636bd872aa217791"
+      "bytes": 719808,
+      "sha256": "a28658f459f703d220ff4d7d45741b9a35641d5014514b85ff76316c44446ba1"
     },
     {
       "file": "data/gvr/map/manifest.json",
       "bytes": 30801,
-      "sha256": "4d61c75b1479e384e8f4837add8bfb9840cb479703cb93c252c06872253f59ab"
+      "sha256": "52408397f6990b215e790e7fbaf67a4e989457e78039d5a57b2ddcd15abb5770"
     },
     {
       "file": "index.html",
       "bytes": 13119,
-      "sha256": "8ef100e9a3c2affe888d78e31ea58b1cd1af5b31a7f60ae84f6455a91c2eb4de"
+      "sha256": "c98dceac0c96a432ee406f5ecd0693be6bec435bfa6d92900bd724d2b7d5daf9"
     },
     {
       "file": "index.txt",
       "bytes": 7618,
-      "sha256": "39382eee2f5c4cc39ed1191aedee77df0371797423ccb528ead0ea231ec0a837"
+      "sha256": "5bcd9ece0ace5eea339344e5cb881b6f45756b4c9e3aa31220b6feb85ed72a64"
     },
     {
       "file": "karta-gvr/__next._full.txt",
       "bytes": 6663,
-      "sha256": "70c238c2d5a4e8c5b7c353d4ef99e5a853c968913c72e0532c9b71841b18cd87"
+      "sha256": "76b18b6abbae1d3cebd0ee8d6b4207f25239a620376a43c130f79cb5ef2b568d"
     },
     {
       "file": "karta-gvr/__next._head.txt",
       "bytes": 2855,
-      "sha256": "dad6433bd9fcdba01e9e6369cc30a87f371304fe1c24569d764f9d017db11efa"
+      "sha256": "5a40f9ffb9cf94da247d0500960ae877faa1279b9409f3f6bdad3faab071b3c5"
     },
     {
       "file": "karta-gvr/__next._index.txt",
       "bytes": 1771,
-      "sha256": "93c781eb4f6fb621843750a040d7fa0800b93c4c4bbf80c8cc41ea0cf94bb7a7"
+      "sha256": "065670b3d51469e8d73f2c14dbe82489e1364781ab9e0dc52ac3e4e3194aafee"
     },
     {
       "file": "karta-gvr/__next._tree.txt",
       "bytes": 317,
-      "sha256": "89bd8e5bdbf8a71e2c4e0ba2a5d2d93c99f3b342fa476e7be13822a19a3c4aae"
+      "sha256": "69dbed7580393429c78211e119359521794fe9ed52daba10e138d6f66e74be1e"
     },
     {
       "file": "karta-gvr/__next.karta-gvr.__PAGE__.txt",
       "bytes": 1123,
-      "sha256": "884de641cebb695ba71711a331709471147b2e5d3415280c7bd4c4483bc48e11"
+      "sha256": "e68eda534566ecced42dbe9362ec592b5c4ab304b2354c90e6bd553a029dd17e"
     },
     {
       "file": "karta-gvr/__next.karta-gvr.txt",
       "bytes": 365,
-      "sha256": "7535949529fc39c318198a7308fa1c331b7b5bb5d8d69b67805b9395bc4b4970"
+      "sha256": "e5bd53cc6088433ac3df91b38e2bb9d1dd1d69cdc40dc26d8a5f204efd77a6d3"
     },
     {
       "file": "karta-gvr/index.html",
       "bytes": 19673,
-      "sha256": "9176bcf0f55d16c8b906d86a3fd1e8bf02fc2e23c0c4d441b6524f9b04e38484"
+      "sha256": "cda721629068f566d133b51f8c2ffaee491b68b9d73fb48c960d4aabc09a180e"
     },
     {
       "file": "karta-gvr/index.txt",
       "bytes": 6663,
-      "sha256": "70c238c2d5a4e8c5b7c353d4ef99e5a853c968913c72e0532c9b71841b18cd87"
+      "sha256": "76b18b6abbae1d3cebd0ee8d6b4207f25239a620376a43c130f79cb5ef2b568d"
     },
     {
       "file": "release.json",
       "bytes": 190,
-      "sha256": "3ece9bb38913daa8669a98e3c2fb82f3ffc62ea899dca4f4d178dacd57e62a75"
+      "sha256": "e6f806d8a17a149b6d05dd31378c4a497a07631be5ff1c83dc438203aecd054b"
     }
   ],
   "sourceGeometryChanged": false,
   "display": {
     "records": 4187,
-    "polygonRecords": 1415,
-    "polygons": 2175,
+    "polygonRecords": 2224,
+    "polygons": 3045,
     "holes": 5,
-    "sha256": "1070173a4bb3ca3a41c8001a60835f68f457205c33f3d215636bd872aa217791",
+    "sha256": "a28658f459f703d220ff4d7d45741b9a35641d5014514b85ff76316c44446ba1",
+    "engineSha256": "cfc8bd7321f8c19732788a31b55c283ca0afa69c7449671a600aa74b5d54c876",
     "spatialClaim": false
+  },
+  "validation": {
+    "protectedFilesUnchanged": 1963,
+    "changedFiles": 27,
+    "addedFiles": 5
   }
 }
