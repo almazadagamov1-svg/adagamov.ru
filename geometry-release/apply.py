@@ -7,8 +7,34 @@ SITE=Path(sys.argv[1] if len(sys.argv)>1 else '_site')
 BASE=Path(sys.argv[2] if len(sys.argv)>2 else '/tmp/pages-release.tar.gz')
 m=json.loads((ROOT/'manifest.json').read_text())
 sha=lambda raw:hashlib.sha256(raw).hexdigest()
+archive_sha=sha(BASE.read_bytes())
+
+if archive_sha=='b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5f':
+ release=json.loads((SITE/'release.json').read_text())
+ index=json.loads((SITE/'data/gvr/map/manifest.json').read_text())
+ assert release['releaseId']=='90ed6b4ac66f73b4'
+ assert release['gvrSourceDate']==index['sourceDate']=='2026-11-19'
+ assert release['gvrSourceSha256']==index['sourceSha256']=='82236a04b36f2a26a6c32f62d7f6334b46b9b7dc071a10d71f8dc4395ec75b0e'
+ assert release['torgiSnapshotDate']=='2026-10-01'
+ assert index['counts']['records']==51393 and index['counts']['regions']==89
+ display=index['displayReconstruction']
+ assert display['sourceGeometryChanged'] is False and display['spatialClaim'] is False
+ ref=index['files']['reassembledInference']
+ assert ref['file']=='/data/gvr/map/inference-reassembled.json'
+ raw=(SITE/ref['file'].lstrip('/')).read_bytes()
+ assert len(raw)==ref['bytes']==704496
+ assert sha(raw)==ref['sha256']=='1b6f219ccda370d06a8d88c2e9c23d5b6c304740e74572288223a11d7db1b111'
+ data=json.loads(raw)
+ assert data['schema']==4 and data['spatialClaim'] is False
+ for key in ('engineSha256','reassemblySha256','registrySha256'):assert data[key]==display[key]
+ assert data['counts']==index['counts']['inference']
+ assert data['counts']['presentationPolygon']==3037 and data['counts']['holes']==5
+ assert data['counts']['reassembledNumberedParts']==8
+ print('Verified data and display geometry embedded in release',release['releaseId'])
+ sys.exit(0)
+
 assert m['schema']==1 and m['sourceGeometryChanged'] is False
-assert sha(BASE.read_bytes())==m['baseArchiveSha256']
+assert archive_sha==m['baseArchiveSha256']
 assert json.loads((SITE/'release.json').read_text())['releaseId']==m['baseRelease']
 
 def allowed(name):

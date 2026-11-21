@@ -1,24 +1,22 @@
 {
   "schema": 1,
-  "releaseId": "522b9c41563ae33c",
+  "releaseId": "90ed6b4ac66f73b4",
+  "gvrSourceDate": "2026-11-19",
+  "gvrSourceSha256": "82236a04b36f2a26a6c32f62d7f6334b46b9b7dc071a10d71f8dc4395ec75b0e",
+  "torgiSnapshotDate": "2026-10-01",
   "sourceRepository": "almazadagamov1-svg/water-area-check",
-  "sourceCommit": "9bc1ab705441fdafa6b8ecd2b7467c8dbf36bc0d",
-  "buildCommit": "e7e3e3d59995e74bcbd3bfd0a2350aeda0b0818d",
-  "sourceCiRunId": 41634706982,
-  "sourceCiConclusion": "success",
-  "archiveSha256": "d9031d8e68e6247deaa259031693a020d6b715b026618ba048725cb3d5393d2a",
-  "archiveBytes": 29691251,
-  "parts": 57,
-  "gvrSourceDate": "2026-10-22",
-  "gvrSourceSha256": "a59a22d8fe99f31fdc2571d78df1b356be8f0aec0e0ab4280066e1e0574c19ff",
+  "sourceCommit": "d1502815dbdc024c9478847d4122e082a352d206",
+  "archiveSha256": "b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5f",
+  "archiveBytes": 29976048,
+  "parts": 58,
   "gvrCounts": {
-    "sourceRecords": 51150,
-    "records": 51149,
+    "sourceRecords": 51394,
+    "records": 51393,
     "duplicatesSuppressed": 1,
-    "pass": 48437,
-    "hints": 2712,
+    "pass": 47822,
+    "hints": 3571,
     "regions": 89,
-    "sourceTiles": 1799
+    "sourceTiles": 1798
   },
   "torgiCounts": {
     "snapshotDate": "2026-10-01",
@@ -26,15 +24,5 @@
     "pass": 171,
     "review": 50,
     "unresolved": 7
-  },
-  "checks": {
-    "siteChecksPassed": 24,
-    "sourceQualityAndKmlPassed": 20,
-    "sourceContextGuardsPassed": 6,
-    "sanitized": true,
-    "unchangedSourceGeometryRegressions": 0,
-    "unchangedSourceGeometryMutations": 0,
-    "preservedReviewedSourceContexts": 467
-  },
-  "buildRun": "https://github.com/almazadagamov1-svg/water-area-check/actions/runs/41634706982"
+  }
 }
