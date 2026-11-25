@@ -11,6 +11,8 @@ from pathlib import Path
 import re
 import tarfile
 
+import november_revision as revision
+
 ARCHIVE_SHA = 'b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5f'
 SOURCE_SHA = '82236a04b36f2a26a6c32f62d7f6334b46b9b7dc071a10d71f8dc4395ec75b0e'
 BASE_RELEASE = '90ed6b4ac66f73b4'
@@ -95,7 +97,7 @@ def read_index(raw):
     return index, records
 
 
-def validate_pair(base, candidate):
+def validate_pair(base, candidate, revision_records=()):
     before_release, after_release = (json.loads(site[RELEASE]) for site in (base, candidate))
     assert before_release['releaseId'] == BASE_RELEASE
     assert before_release['gvrSourceDate'] == '2026-11-19'
@@ -128,6 +130,10 @@ def validate_pair(base, candidate):
     expected_map['files']['reassembledInference'] = after_map['files']['reassembledInference']
     for key in ('engineSha256', 'reassemblySha256'):
         expected_map['displayReconstruction'][key] = after_map['displayReconstruction'][key]
+    helper_signature = new_index.get('wgsSectionsSha256')
+    if helper_signature is not None:
+        assert re.fullmatch(r'[a-f0-9]{64}', helper_signature)
+        expected_map['displayReconstruction']['wgsSectionsSha256'] = helper_signature
     assert expected_map == after_map, 'A protected map manifest field changed'
     assert all(new_index[key] == old_index[key] for key in ('engine', 'fields', 'indexScope'))
     assert new_index['methods'].keys() == old_index['methods'].keys(), 'Unknown client display method'
@@ -135,13 +141,14 @@ def validate_pair(base, candidate):
 
     before_polygons = group_polygons(old_records)
     after_polygons = group_polygons(new_records)
-    assert all(after_polygons.get(group) == entries for group, entries in before_polygons.items()), \
-        'Previously published calculated polygon changed or disappeared'
-    assert len(after_polygons) > len(before_polygons), 'Patch contains no additional closed groups'
+    original_changes = {group for group, entries in before_polygons.items() if after_polygons.get(group) != entries}
+    assert all(record_id in revision_records for record_id, _ in original_changes), \
+        'Previously published calculated polygon changed outside certified records'
+    assert revision_records or len(after_polygons) > len(before_polygons), 'Patch contains no additional closed groups'
     return {
         'releaseId': after_release['releaseId'],
         'newClosedGroups': len(after_polygons.keys() - before_polygons.keys()),
-        'unchangedClosedGroups': len(before_polygons),
+        'unchangedClosedGroups': len(before_polygons) - len(original_changes),
         'polygonParts': new_index['counts']['presentationPolygon'],
         'polygonRecords': len({record_id for record_id, _ in after_polygons}),
         'holes': new_index['counts']['holes'],
@@ -160,14 +167,23 @@ def safe_archive(candidate):
     return gzip.compress(archive.getvalue(), compresslevel=9, mtime=0)
 
 
-def pack(baseline, staged, destination):
+def pack(baseline, staged, destination, revision_ids=None, previous_package=None):
     base = read_site(baseline)
     candidate = {name: (staged / name).read_bytes() for name in (MANIFEST, INDEX)}
     release = {**json.loads(base[RELEASE]), 'releaseId': release_id(candidate)}
     candidate[RELEASE] = (json.dumps(release, indent=2) + '\n').encode()
     for name in MAP_PAGES:
         candidate[name] = update_page_release(base[name], name, release['releaseId'])
-    comparison = validate_pair(base, candidate)
+    certificate_raw = None
+    if revision_ids is not None:
+        assert previous_package is not None
+        prior_meta = (previous_package / PATCH_MANIFEST).read_bytes()
+        prior_archive = (previous_package / PATCH_ARCHIVE).read_bytes()
+        prior = read_predecessor(base, prior_meta, prior_archive)
+        certificate = revision.certificate(base[INDEX], prior[INDEX], candidate[INDEX],
+                                           revision_ids, baseline, read_index, SOURCE_SHA)
+        certificate_raw = (json.dumps(certificate, indent=2) + '\n').encode()
+    comparison = validate_pair(base, candidate, set(revision_ids or []))
     archive = safe_archive(candidate)
     metadata = {
         'schema': 1,
@@ -180,18 +196,16 @@ def pack(baseline, staged, destination):
     }
     destination.mkdir(parents=True, exist_ok=True)
     (destination / PATCH_ARCHIVE).write_bytes(archive)
+    if certificate_raw is not None:
+        metadata['revisionCertificate'] = file_receipt(certificate_raw)
+        (destination / revision.CERTIFICATE).write_bytes(certificate_raw)
+        (destination / revision.PREVIOUS_MANIFEST).write_bytes(prior_meta)
+        (destination / revision.PREVIOUS_ARCHIVE).write_bytes(prior_archive)
     (destination / PATCH_MANIFEST).write_text(json.dumps(metadata, indent=2) + '\n')
     return metadata
 
 
-def apply_overlay(directory, site, archive_sha):
-    metadata = json.loads((directory / PATCH_MANIFEST).read_bytes())
-    assert metadata['schema'] == 1
-    assert archive_sha == metadata['baseArchiveSha256'] == ARCHIVE_SHA
-    assert metadata['baseRelease'] == BASE_RELEASE and metadata['sourceSha256'] == SOURCE_SHA
-    base = read_site(site)
-    assert {name: file_receipt(raw) for name, raw in base.items()} == metadata['baseFiles']
-    raw = (directory / PATCH_ARCHIVE).read_bytes()
+def read_archive(metadata, raw):
     assert file_receipt(raw) == metadata['archive']
     candidate = {}
     with tarfile.open(fileobj=BytesIO(raw), mode='r:gz') as tar:
@@ -200,14 +214,52 @@ def apply_overlay(directory, site, archive_sha):
         for member in members:
             assert member.isfile() and member.size == metadata['comparison']['files'][member.name]['bytes']
             candidate[member.name] = tar.extractfile(member).read()
-    comparison = validate_pair(base, candidate)
+    return candidate
+
+
+def read_predecessor(base, metadata_raw, archive_raw):
+    assert checksum(metadata_raw) == revision.PREVIOUS_MANIFEST_SHA
+    assert checksum(archive_raw) == revision.PREVIOUS_ARCHIVE_SHA
+    metadata = json.loads(metadata_raw)
+    assert metadata['schema'] == 1 and metadata['baseArchiveSha256'] == ARCHIVE_SHA
+    assert {name: file_receipt(raw) for name, raw in base.items()} == metadata['baseFiles']
+    previous = read_archive(metadata, archive_raw)
+    assert json.loads(previous[RELEASE])['releaseId'] == revision.PREVIOUS_RELEASE
+    assert validate_pair(base, previous) == metadata['comparison']
+    return previous
+
+
+def read_overlay(directory, site, archive_sha):
+    metadata = json.loads((directory / PATCH_MANIFEST).read_bytes())
+    assert metadata['schema'] == 1
+    assert archive_sha == metadata['baseArchiveSha256'] == ARCHIVE_SHA
+    assert metadata['baseRelease'] == BASE_RELEASE and metadata['sourceSha256'] == SOURCE_SHA
+    base = read_site(site)
+    assert {name: file_receipt(raw) for name, raw in base.items()} == metadata['baseFiles']
+    candidate = read_archive(metadata, (directory / PATCH_ARCHIVE).read_bytes())
+    ids = []
+    if 'revisionCertificate' in metadata:
+        certificate_raw = (directory / revision.CERTIFICATE).read_bytes()
+        assert file_receipt(certificate_raw) == metadata['revisionCertificate']
+        declared = json.loads(certificate_raw)
+        previous = read_predecessor(base, (directory / revision.PREVIOUS_MANIFEST).read_bytes(),
+                                    (directory / revision.PREVIOUS_ARCHIVE).read_bytes())
+        ids = [row['recordId'] for row in declared['revisionRecords']]
+        checked = revision.certificate(base[INDEX], previous[INDEX], candidate[INDEX], ids, site, read_index, SOURCE_SHA)
+        assert checked == declared, 'Full-source correction certificate mismatch'
+    comparison = validate_pair(base, candidate, set(ids))
     assert comparison == metadata['comparison']
+    return comparison, candidate
+
+
+def apply_overlay(directory, site, archive_sha):
+    comparison, candidate = read_overlay(directory, site, archive_sha)
     for name in PATCH_FILES:
         (site / name).write_bytes(candidate[name])
     return comparison
 
 
-def diff_tree(before, after):
+def diff_tree(before, after, package=None):
     def checksums(root):
         return {p.relative_to(root).as_posix(): checksum(p.read_bytes())
                 for p in root.rglob('*') if p.is_file()}
@@ -217,8 +269,12 @@ def diff_tree(before, after):
     assert old.keys() == new.keys(), 'The static release file inventory changed'
     changed = sorted(name for name, digest in old.items() if new[name] != digest)
     assert changed == sorted(PATCH_FILES), changed
-    return {**validate_pair(read_site(before), read_site(after)),
-            'protectedFilesUnchanged': len(old) - len(changed), 'changedFiles': changed}
+    if package is None:
+        comparison = validate_pair(read_site(before), read_site(after))
+    else:
+        comparison, candidate = read_overlay(package, before, ARCHIVE_SHA)
+        assert read_site(after) == candidate, 'Applied site bytes differ from the certified overlay'
+    return {**comparison, 'protectedFilesUnchanged': len(old) - len(changed), 'changedFiles': changed}
 
 
 def main():
@@ -228,6 +284,8 @@ def main():
     packer.add_argument('baseline', type=Path)
     packer.add_argument('staged', type=Path)
     packer.add_argument('package', type=Path)
+    packer.add_argument('--revision-ids', type=Path)
+    packer.add_argument('--predecessor-package', type=Path)
     apply = commands.add_parser('apply')
     apply.add_argument('package', type=Path)
     apply.add_argument('site', type=Path)
@@ -235,13 +293,16 @@ def main():
     audit = commands.add_parser('audit')
     audit.add_argument('baseline', type=Path)
     audit.add_argument('patched', type=Path)
+    audit.add_argument('--package', type=Path)
     args = parser.parse_args()
     if args.command == 'pack':
-        result = pack(args.baseline, args.staged, args.package)
+        assert bool(args.revision_ids) == bool(args.predecessor_package), 'Both revision inputs are required'
+        ids = json.loads(args.revision_ids.read_text()) if args.revision_ids else None
+        result = pack(args.baseline, args.staged, args.package, ids, args.predecessor_package)
     elif args.command == 'apply':
         result = apply_overlay(args.package, args.site, checksum(args.baseline_archive.read_bytes()))
     else:
-        result = diff_tree(args.baseline, args.patched)
+        result = diff_tree(args.baseline, args.patched, args.package)
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
 

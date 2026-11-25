@@ -34,45 +34,49 @@
     }
   },
   "archive": {
-    "bytes": 117759,
-    "sha256": "3eb2d78560d6004d0a8aa748bd11e4d81a3c076526012a53e4156f6f2b85b86d"
+    "bytes": 120858,
+    "sha256": "6225491907e8eea75559c11d413835e778530f730810647d524353473c8760c5"
   },
   "comparison": {
-    "releaseId": "a56bacc7b6d35c1f",
-    "newClosedGroups": 527,
-    "unchangedClosedGroups": 2461,
-    "polygonParts": 3564,
-    "polygonRecords": 2420,
+    "releaseId": "e4c62b86b22a7c4d",
+    "newClosedGroups": 549,
+    "unchangedClosedGroups": 2341,
+    "polygonParts": 3688,
+    "polygonRecords": 2427,
     "holes": 5,
     "files": {
       "release.json": {
         "bytes": 212,
-        "sha256": "1b2ea9e44d00ffa7638117a4eb4dd2ead9742adea3088659f50621b64a7f3a3a"
+        "sha256": "7be6556b7b3fdf6ce37a7f25c5f807649a03991c918db041250aa02edf4b6f3a"
       },
       "data/gvr/map/manifest.json": {
-        "bytes": 31274,
-        "sha256": "a76a32ea78e0612ce665600a25ba0a7c9caaef2c156ba49ec188a95425c29c88"
+        "bytes": 31362,
+        "sha256": "9f0ca8951b5a8297e267a928650ba1935237350c5646091c3bf16b9517e49ea9"
       },
       "data/gvr/map/inference-reassembled.json": {
-        "bytes": 708186,
-        "sha256": "be1ff0aaecace1e0442c0c5f427bb32457b08c2be4b2f27cdd1e69611486b628"
+        "bytes": 765685,
+        "sha256": "7a246e82ffebe93e99d92e559df2660bce69de2372eba73159329fa7e0faf654"
       },
       "karta-gvr/index.html": {
         "bytes": 19673,
-        "sha256": "a5303746a4a41444c91e269703a71dfb06ca2338a708a7138c7c042ee3a4feae"
+        "sha256": "ed6ca2aadce157dba852403f36ed63e397bb212530c9630addb3fced230f74e5"
       },
       "karta-gvr/index.txt": {
         "bytes": 6663,
-        "sha256": "4de3024df78e9e64db6b345b0f981fb7f94e6c82de1e53d97e015a89e5216b87"
+        "sha256": "9f9174b63166531b67d8fa3e0dd895f25fd44e38a27194ccd82471600a5dcbed"
       },
       "karta-gvr/__next._full.txt": {
         "bytes": 6663,
-        "sha256": "4de3024df78e9e64db6b345b0f981fb7f94e6c82de1e53d97e015a89e5216b87"
+        "sha256": "9f9174b63166531b67d8fa3e0dd895f25fd44e38a27194ccd82471600a5dcbed"
       },
       "karta-gvr/__next.karta-gvr.__PAGE__.txt": {
         "bytes": 1123,
-        "sha256": "88798fdf72b00aba76c2a4b5613d909e656157db9a1cc995a222dde0abd14da9"
+        "sha256": "18b4346b15e6084cabe354f9194df5f3cc3df73aaa4bf2de39a7359c7934d397"
       }
     }
+  },
+  "revisionCertificate": {
+    "bytes": 10971,
+    "sha256": "f9278f1aedcc984840b245b5576f20a55b165416b050ccc3fc90bee650c43785"
   }
 }
