@@ -2,7 +2,7 @@
 
 import argparse
 from collections import Counter
-from hashlib import file_digest, sha256
+from hashlib import sha256
 import json
 from math import isfinite
 from pathlib import Path
@@ -26,8 +26,11 @@ def read(path):
 
 
 def sha(path):
+    checksum = sha256()
     with path.open('rb') as stream:
-        return file_digest(stream, 'sha256').hexdigest()
+        while chunk := stream.read(1024 * 1024):
+            checksum.update(chunk)
+    return checksum.hexdigest()
 
 
 def receipt(path):
