@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "baseArchiveSha256": "b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5f",
+  "baseRelease": "90ed6b4ac66f73b4",
+  "sourceSha256": "82236a04b36f2a26a6c32f62d7f6334b46b9b7dc071a10d71f8dc4395ec75b0e",
+  "baseFiles": {
+    "release.json": {
+      "bytes": 190,
+      "sha256": "e77d66e41a0635d205b45d69100719c6e6e89f07ccf9e20b349a794cd3335dd7"
+    },
+    "data/gvr/map/manifest.json": {
+      "bytes": 31272,
+      "sha256": "5a25af66b2df7a0c7addf175baf9564f03c52803f4e6eb62ab7ee937f008eb97"
+    },
+    "data/gvr/map/inference-reassembled.json": {
+      "bytes": 704496,
+      "sha256": "1b6f219ccda370d06a8d88c2e9c23d5b6c304740e74572288223a11d7db1b111"
+    },
+    "karta-gvr/index.html": {
+      "bytes": 19673,
+      "sha256": "356ffc57f5e3423b6be5f156f98b4f9a698f2f21bd0f2d7e4cdaab8ab4626cba"
+    },
+    "karta-gvr/index.txt": {
+      "bytes": 6663,
+      "sha256": "9919a160b3dc770b65de45e4e1a05e6a6e018809f2629fbbfbd0295a64612b45"
+    },
+    "karta-gvr/__next._full.txt": {
+      "bytes": 6663,
+      "sha256": "9919a160b3dc770b65de45e4e1a05e6a6e018809f2629fbbfbd0295a64612b45"
+    },
+    "karta-gvr/__next.karta-gvr.__PAGE__.txt": {
+      "bytes": 1123,
+      "sha256": "12e1d2b81cc3a104ff2049db13665d1ee78aaf071d7fce99fa21933dd777f7ba"
+    }
+  },
+  "archive": {
+    "bytes": 117759,
+    "sha256": "3eb2d78560d6004d0a8aa748bd11e4d81a3c076526012a53e4156f6f2b85b86d"
+  },
+  "comparison": {
+    "releaseId": "a56bacc7b6d35c1f",
+    "newClosedGroups": 527,
+    "unchangedClosedGroups": 2461,
+    "polygonParts": 3564,
+    "polygonRecords": 2420,
+    "holes": 5,
+    "files": {
+      "release.json": {
+        "bytes": 212,
+        "sha256": "1b2ea9e44d00ffa7638117a4eb4dd2ead9742adea3088659f50621b64a7f3a3a"
+      },
+      "data/gvr/map/manifest.json": {
+        "bytes": 31274,
+        "sha256": "a76a32ea78e0612ce665600a25ba0a7c9caaef2c156ba49ec188a95425c29c88"
+      },
+      "data/gvr/map/inference-reassembled.json": {
+        "bytes": 708186,
+        "sha256": "be1ff0aaecace1e0442c0c5f427bb32457b08c2be4b2f27cdd1e69611486b628"
+      },
+      "karta-gvr/index.html": {
+        "bytes": 19673,
+        "sha256": "a5303746a4a41444c91e269703a71dfb06ca2338a708a7138c7c042ee3a4feae"
+      },
+      "karta-gvr/index.txt": {
+        "bytes": 6663,
+        "sha256": "4de3024df78e9e64db6b345b0f981fb7f94e6c82de1e53d97e015a89e5216b87"
+      },
+      "karta-gvr/__next._full.txt": {
+        "bytes": 6663,
+        "sha256": "4de3024df78e9e64db6b345b0f981fb7f94e6c82de1e53d97e015a89e5216b87"
+      },
+      "karta-gvr/__next.karta-gvr.__PAGE__.txt": {
+        "bytes": 1123,
+        "sha256": "88798fdf72b00aba76c2a4b5613d909e656157db9a1cc995a222dde0abd14da9"
+      }
+    }
+  }
+}

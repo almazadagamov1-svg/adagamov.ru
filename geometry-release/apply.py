@@ -31,6 +31,9 @@ if archive_sha=='b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5
  assert data['counts']['presentationPolygon']==3037 and data['counts']['holes']==5
  assert data['counts']['reassembledNumberedParts']==8
  print('Verified data and display geometry embedded in release',release['releaseId'])
+ from november import apply_overlay
+ comparison=apply_overlay(ROOT/'november',SITE,archive_sha)
+ print('Verified November display release',comparison['releaseId'],comparison['polygonParts'],'parts;',comparison['newClosedGroups'],'new groups')
  sys.exit(0)
 
 assert m['schema']==1 and m['sourceGeometryChanged'] is False
