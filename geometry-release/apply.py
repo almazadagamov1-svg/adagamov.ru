@@ -9,6 +9,13 @@ m=json.loads((ROOT/'manifest.json').read_text())
 sha=lambda raw:hashlib.sha256(raw).hexdigest()
 archive_sha=sha(BASE.read_bytes())
 
+archive_manifest=ROOT/'kazan-archive-full-site.json'
+if archive_manifest.is_file() and json.loads(archive_manifest.read_bytes())['archive']['sha256']==archive_sha:
+ from kazan_archive import verify_for_pages
+ history=verify_for_pages(SITE,BASE,archive_manifest)
+ print('Verified full Pages release with Kazan history',history['release']['releaseId'],history['history']['records'],'records')
+ sys.exit(0)
+
 if archive_sha=='b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5f':
  release=json.loads((SITE/'release.json').read_text())
  index=json.loads((SITE/'data/gvr/map/manifest.json').read_text())

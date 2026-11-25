@@ -1,21 +1,21 @@
 {
   "schema": 1,
-  "releaseId": "90ed6b4ac66f73b4",
+  "releaseId": "9a2371739caaaf4a",
   "gvrSourceDate": "2026-11-19",
   "gvrSourceSha256": "82236a04b36f2a26a6c32f62d7f6334b46b9b7dc071a10d71f8dc4395ec75b0e",
   "torgiSnapshotDate": "2026-10-01",
   "sourceRepository": "almazadagamov1-svg/water-area-check",
-  "sourceCommit": "d1502815dbdc024c9478847d4122e082a352d206",
-  "archiveSha256": "b02c8fef40b89b6510e788d9f50fb35714a9a864f68251cca791bd1199c99d5f",
-  "archiveBytes": 29976048,
+  "sourceCommit": "339e39e70a5ac9b3775e723fb6c0760e7c4c760f",
+  "archiveSha256": "effa6da6ad7755b185b5a39f0f529c6e12af7d4f19e8287013da6d77fbeb926c",
+  "archiveBytes": 30038210,
   "parts": 58,
   "gvrCounts": {
     "sourceRecords": 51394,
     "records": 51393,
-    "duplicatesSuppressed": 1,
     "pass": 47822,
     "hints": 3571,
     "regions": 89,
+    "duplicatesSuppressed": 1,
     "sourceTiles": 1798
   },
   "torgiCounts": {
@@ -24,5 +24,20 @@
     "pass": 171,
     "review": 50,
     "unresolved": 7
+  },
+  "history": {
+    "path": "data/archives/kazan-vodokanal-2026-10-22.json",
+    "bytes": 274695,
+    "sha256": "43d6e87801edb77eb11c492d34c77366d1d3102576a1725617b05ba88f86baad",
+    "sourceDate": "2026-10-22",
+    "sourceSha256": "a59a22d8fe99f31fdc2571d78df1b356be8f0aec0e0ab4280066e1e0574c19ff",
+    "sourceRelease": "114640d1913f8fe1",
+    "records": 15,
+    "parts": {
+      "multi_point": 7,
+      "polygon": 9,
+      "line": 35,
+      "point": 5
+    }
   }
 }
