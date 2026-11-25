@@ -9,6 +9,13 @@ m=json.loads((ROOT/'manifest.json').read_text())
 sha=lambda raw:hashlib.sha256(raw).hexdigest()
 archive_sha=sha(BASE.read_bytes())
 
+city_manifest=ROOT/'city-source-full-site.json'
+if city_manifest.is_file() and json.loads(city_manifest.read_bytes())['archive']['sha256']==archive_sha:
+ from city_source import verify_for_pages
+ city=verify_for_pages(SITE,BASE,city_manifest)
+ print('Verified city coordinates and Kazan history',city['release']['releaseId'],len(city['upgradedIds']),'coordinate records')
+ sys.exit(0)
+
 archive_manifest=ROOT/'kazan-archive-full-site.json'
 if archive_manifest.is_file() and json.loads(archive_manifest.read_bytes())['archive']['sha256']==archive_sha:
  from kazan_archive import verify_for_pages
